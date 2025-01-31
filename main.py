@@ -2,7 +2,7 @@
 
 from PIL import Image
 from skimage.filters import median
-from skimage.morphology import ball
+from skimage.morphology import disk
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import convolve2d
@@ -25,7 +25,7 @@ def edge_detection(image):
 
 
 image = load_image('shoobydooby.jpg')
-clean_image = median(image, ball(3))
+clean_image = median(image, disk(3))
 binary_image = edge_detection(clean_image) <20
 plt.imshow(binary_image, cmap='gray')
 plt.imsave("binary_image.png", binary_image, cmap='gray')
