@@ -16,7 +16,6 @@ def edge_detection(image):
     
  
     image = np.mean(image, axis=2)
-    image = np.pad(image,pad_width =((1,1),(1,1)) ,constant_values=0)
     y_filter = np.array([[1,2,1],[0,0,0],[-1,-2,-1]])
     x_filter = np.array([[-1,0,1],[-2,0,2],[-1,0,1]])
     edgeX = convolve2d(image, x_filter, mode="same", boundary="fill", fillvalue=0)
