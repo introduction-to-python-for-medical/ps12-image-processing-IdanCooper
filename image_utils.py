@@ -7,6 +7,8 @@ def load_image(path):
     return np.array(i)
 
 def edge_detection(image):
+    
+    
     grey = np.mean(image, axis=2)
     grey = np.pad(grey,pad_width =((1,1),(1,1)) ,constant_values=0)
     y_filter = np.array([[1,2,1],[0,0,0],[-1,-2,-1]])
@@ -15,5 +17,3 @@ def edge_detection(image):
     edgeY = convolve2d(grey, y_filter)[1:-1,1:-1]
     edgeMAG = (edgeX**2 + edgeY**2)**0.5
     return edgeMAG
-
-
