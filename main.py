@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import convolve2d
 
-from image_utils.py import load_image , edge_detection
+from image_utils import load_image , edge_detection
 
 image = load_image('shoobydooby.jpg')
 clean_image = median(image, ball(3))
