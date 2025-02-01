@@ -21,4 +21,4 @@ def edge_detection(image):
     edgeX = convolve2d(image, x_filter, mode="same", boundary="fill")
     edgeY = convolve2d(image, y_filter, mode="same", boundary="fill")
     edgeMAG = (edgeX**2 + edgeY**2)**0.5
-    return edgeMAG
+    return edgeMAG.astype(np.uint8) * 255
