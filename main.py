@@ -12,6 +12,6 @@ from image_utils import load_image , edge_detection
 image = load_image('shoobydooby.jpg')
 clean_image = median(image, ball(3))
 edge_detected_image = edge_detection(clean_image)
-edge_detected_image = edge_detected_image.astype(np.uint8)  
+edge_detected_image = edge_detected_image.astype(np.uint8) * 255  
 edge_image = Image.fromarray(edge_detected_image)
 edge_image.save('my_edges.png')
