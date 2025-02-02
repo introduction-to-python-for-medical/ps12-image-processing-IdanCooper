@@ -1,8 +1,5 @@
 from PIL import Image
-from skimage.filters import median
-from skimage.morphology import ball
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.signal import convolve2d
 
 
